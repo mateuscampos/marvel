@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B440F9721CAA2C300ABCAED /* MarvelApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9621CAA2C300ABCAED /* MarvelApiClient.swift */; };
+		7B440F9A21CAA84400ABCAED /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9921CAA84400ABCAED /* Result.swift */; };
+		7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9B21CAAEEE00ABCAED /* APIResponse.swift */; };
+		7B440F9E21CAB06100ABCAED /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9D21CAB06100ABCAED /* Parser.swift */; };
 		7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461121CA9080004CEF4D /* Coordinator.swift */; };
 		7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */; };
 		7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5F122A21CA82EC0095573D /* AppDelegate.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B440F9621CAA2C300ABCAED /* MarvelApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiClient.swift; sourceTree = "<group>"; };
+		7B440F9921CAA84400ABCAED /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7B440F9B21CAAEEE00ABCAED /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		7B440F9D21CAB06100ABCAED /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		7B4A461121CA9080004CEF4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Coordinator.swift"; sourceTree = "<group>"; };
 		7B5F122721CA82EC0095573D /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,9 +84,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B440F9521CAA1E000ABCAED /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7B440F9621CAA2C300ABCAED /* MarvelApiClient.swift */,
+				7B440F9B21CAAEEE00ABCAED /* APIResponse.swift */,
+				7B440F9D21CAB06100ABCAED /* Parser.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7B440F9821CAA83800ABCAED /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7B440F9921CAA84400ABCAED /* Result.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7B4A460F21CA9040004CEF4D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				7B440F9821CAA83800ABCAED /* Utils */,
 				7B4A461321CA90D4004CEF4D /* Extensions */,
 				7B4A461021CA904C004CEF4D /* Protocols */,
 			);
@@ -124,6 +151,7 @@
 		7B5F122921CA82EC0095573D /* marvel */ = {
 			isa = PBXGroup;
 			children = (
+				7B440F9521CAA1E000ABCAED /* API */,
 				7B4A460F21CA9040004CEF4D /* Commons */,
 				7BC12B8B21CA8FD100EBCC31 /* Features */,
 				7BC12B8A21CA8FC900EBCC31 /* Resources */,
@@ -306,8 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */,
+				7B440F9A21CAA84400ABCAED /* Result.swift in Sources */,
 				7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */,
 				7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */,
+				7B440F9E21CAB06100ABCAED /* Parser.swift in Sources */,
+				7B440F9721CAA2C300ABCAED /* MarvelApiClient.swift in Sources */,
 				7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */,
 				7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */,
 			);
