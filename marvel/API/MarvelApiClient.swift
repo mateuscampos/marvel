@@ -19,6 +19,7 @@ public enum HTTPMethod: String {
 }
 
 public struct RequestData {
+    
     public let path: String
     public let method: HTTPMethod
     public let params: [String: Any?]?
@@ -30,11 +31,31 @@ public struct RequestData {
         params: [String: Any?]? = nil,
         headers: [String: String]? = nil
         ) {
-        self.path = path
+
+        let credentials = DefautPathParameters().credentials(ts: Date().timeIntervalSince1970.description)
+        self.path = String("\(path)\(credentials)")
         self.method = method
         self.params = params
         self.headers = headers
+        
     }
+    
+}
+
+public struct DefautPathParameters {
+    
+    let keys: MarvelKeysProtocol
+    
+    init(keys: MarvelKeysProtocol = MarvelKeys()) {
+        self.keys = keys
+    }
+    
+    public func credentials(ts: String) -> String {
+        let toHash = String("\(ts)\(keys.marvelPrivateKey)\(keys.marvelPublicKey)")
+        let hash = toHash.MD5
+        return String("&ts=\(ts.description)&apikey=\(keys.marvelPublicKey)&hash=\(hash)")
+    }
+    
 }
 
 public protocol APIClient {

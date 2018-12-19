@@ -24,15 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.appCoordinator = AppCoordinator(rootViewController: rootController)
         self.appCoordinator?.start()
         
-        HeroesListService().heroes(HeroesListRequest(limit: 0, offset: 0)) { heroes in
-            
-            print(heroes)
-            
-            return
-            
-        }
-        
         return true
+        
     }
 
 }
