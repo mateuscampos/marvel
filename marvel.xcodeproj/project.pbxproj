@@ -11,6 +11,11 @@
 		7B440F9A21CAA84400ABCAED /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9921CAA84400ABCAED /* Result.swift */; };
 		7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9B21CAAEEE00ABCAED /* APIResponse.swift */; };
 		7B440F9E21CAB06100ABCAED /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440F9D21CAB06100ABCAED /* Parser.swift */; };
+		7B440FA221CAB51100ABCAED /* HeroesListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FA121CAB51100ABCAED /* HeroesListAPI.swift */; };
+		7B440FA521CAB79300ABCAED /* HeroesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FA421CAB79300ABCAED /* HeroesResponse.swift */; };
+		7B440FA721CABB2400ABCAED /* DataModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FA621CABB2400ABCAED /* DataModelResponse.swift */; };
+		7B440FA921CABBF400ABCAED /* HeroesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FA821CABBF400ABCAED /* HeroesListService.swift */; };
+		7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FAA21CABCBA00ABCAED /* HeroesListRequest.swift */; };
 		7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461121CA9080004CEF4D /* Coordinator.swift */; };
 		7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */; };
 		7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5F122A21CA82EC0095573D /* AppDelegate.swift */; };
@@ -43,6 +48,11 @@
 		7B440F9921CAA84400ABCAED /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7B440F9B21CAAEEE00ABCAED /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		7B440F9D21CAB06100ABCAED /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		7B440FA121CAB51100ABCAED /* HeroesListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListAPI.swift; sourceTree = "<group>"; };
+		7B440FA421CAB79300ABCAED /* HeroesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesResponse.swift; sourceTree = "<group>"; };
+		7B440FA621CABB2400ABCAED /* DataModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelResponse.swift; sourceTree = "<group>"; };
+		7B440FA821CABBF400ABCAED /* HeroesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListService.swift; sourceTree = "<group>"; };
+		7B440FAA21CABCBA00ABCAED /* HeroesListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListRequest.swift; sourceTree = "<group>"; };
 		7B4A461121CA9080004CEF4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Coordinator.swift"; sourceTree = "<group>"; };
 		7B5F122721CA82EC0095573D /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +108,36 @@
 			isa = PBXGroup;
 			children = (
 				7B440F9921CAA84400ABCAED /* Result.swift */,
+				7B440FA621CABB2400ABCAED /* DataModelResponse.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7B440F9F21CAB4E200ABCAED /* HeroesList */ = {
+			isa = PBXGroup;
+			children = (
+				7B440FA321CAB54900ABCAED /* Models */,
+				7B440FA021CAB4EF00ABCAED /* Service */,
+			);
+			path = HeroesList;
+			sourceTree = "<group>";
+		};
+		7B440FA021CAB4EF00ABCAED /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7B440FA121CAB51100ABCAED /* HeroesListAPI.swift */,
+				7B440FA821CABBF400ABCAED /* HeroesListService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7B440FA321CAB54900ABCAED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B440FA421CAB79300ABCAED /* HeroesResponse.swift */,
+				7B440FAA21CABCBA00ABCAED /* HeroesListRequest.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7B4A460F21CA9040004CEF4D /* Commons */ = {
@@ -200,6 +238,7 @@
 		7BC12B8B21CA8FD100EBCC31 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7B440F9F21CAB4E200ABCAED /* HeroesList */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -335,11 +374,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */,
+				7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */,
 				7B440F9A21CAA84400ABCAED /* Result.swift in Sources */,
+				7B440FA721CABB2400ABCAED /* DataModelResponse.swift in Sources */,
 				7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */,
 				7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */,
 				7B440F9E21CAB06100ABCAED /* Parser.swift in Sources */,
 				7B440F9721CAA2C300ABCAED /* MarvelApiClient.swift in Sources */,
+				7B440FA521CAB79300ABCAED /* HeroesResponse.swift in Sources */,
+				7B440FA221CAB51100ABCAED /* HeroesListAPI.swift in Sources */,
+				7B440FA921CABBF400ABCAED /* HeroesListService.swift in Sources */,
 				7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */,
 				7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */,
 			);
