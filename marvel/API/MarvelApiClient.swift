@@ -8,61 +8,6 @@
 
 import Foundation
 
-
-public protocol RequestType {
-    associatedtype ResponseType: Codable
-    var data: RequestData { get }
-}
-
-public enum HTTPMethod: String {
-    case get
-}
-
-public struct RequestData {
-    
-    public let path: String
-    public let method: HTTPMethod
-    public let params: [String: Any?]?
-    public let headers: [String: String]?
-    
-    public init (
-        path: String,
-        method: HTTPMethod = .get,
-        params: [String: Any?]? = nil,
-        headers: [String: String]? = nil
-        ) {
-
-        let credentials = DefautPathParameters().credentials(ts: Date().timeIntervalSince1970.description)
-        self.path = String("\(path)\(credentials)")
-        self.method = method
-        self.params = params
-        self.headers = headers
-        
-    }
-    
-}
-
-public struct DefautPathParameters {
-    
-    let keys: MarvelKeysProtocol
-    
-    init(keys: MarvelKeysProtocol = MarvelKeys()) {
-        self.keys = keys
-    }
-    
-    public func credentials(ts: String) -> String {
-        let toHash = String("\(ts)\(keys.marvelPrivateKey)\(keys.marvelPublicKey)")
-        let hash = toHash.MD5
-        return String("&ts=\(ts.description)&apikey=\(keys.marvelPublicKey)&hash=\(hash)")
-    }
-    
-}
-
-public protocol APIClient {
-    func dispatch(_ request: RequestData,
-                  _ callback: @escaping (Result<APIResponse>) -> Void)
-}
-
 public enum ConnError: Swift.Error {
     case invalidURL
     case noData
@@ -109,24 +54,6 @@ public struct MarvelApiClient: APIClient {
                                           response: _response)))
 
             }.resume()
-    }
-}
-
-public extension APIClient {
-    
-    func requestDecodable<T: Decodable>(request: RequestData, callback: @escaping (Result<T>) -> Void) {
-        
-        dispatch(request) { resp in
-            
-            switch resp {
-            case .success(let response):
-                Parser.parse(from: response.data, callback: callback)
-                
-            case .failure(let error):
-                callback(.failure(error))
-            }
-            
-        }
         
     }
     
