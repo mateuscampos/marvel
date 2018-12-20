@@ -11,6 +11,8 @@ import Foundation
 public enum ConnError: Swift.Error {
     case invalidURL
     case noData
+    case noStatusCode
+    case genericConnError
 }
 
 public struct MarvelApiClient: APIClient {
@@ -40,18 +42,10 @@ public struct MarvelApiClient: APIClient {
         
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             
-            if let error = error {
-                callback(.failure(error))
-                return
-            }
-            
-            guard let _data = data, let _response = response else {
-                callback(.failure(ConnError.noData))
-                return
-            }
-            
-            callback(.success(APIResponse(data: _data,
-                                          response: _response)))
+            ResponseHandler().handle(data: data,
+                                     response: response,
+                                     error: error,
+                                     callback: callback)
 
             }.resume()
         
