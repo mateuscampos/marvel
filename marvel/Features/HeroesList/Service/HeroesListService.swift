@@ -24,7 +24,11 @@ public class HeroesListService: HeroesListServiceProtocol {
     public func heroes(_ request: HeroesListRequest,
                        _ callback: @escaping (Result<HeroesResponse>) -> Void) {
         
-        let req = RequestData(path: "https://gateway.marvel.com:443/v1/public/characters?limit=20&offset=19",
+        guard let baseUrl = EnvironmentSettings.baseUrl else {
+            fatalError("Should have a base url set up on project configuration")
+        }
+        
+        let req = RequestData(path: "\(baseUrl)characters?limit=20&offset=19",
                               method: .get)
         
         self.api.heroes(req, callback)
