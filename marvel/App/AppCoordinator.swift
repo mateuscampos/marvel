@@ -22,6 +22,7 @@ class AppCoordinator: Coordinator {
     func start() {
         
         self.navigation.viewControllers = [mockFakeViewController()]
+        printHeroes()
         
     }
     
@@ -30,6 +31,14 @@ class AppCoordinator: Coordinator {
         let viewController = UIViewController()
         viewController.view.backgroundColor = .white
         return viewController
+        
+    }
+    
+    func printHeroes() {
+        
+        HeroesListService().heroes(HeroesListRequest(limit: 20, offset: 20)) { list in
+            print(list)
+        }
         
     }
     

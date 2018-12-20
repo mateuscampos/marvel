@@ -21,7 +21,8 @@
 		7B440FB521CBE3B300ABCAED /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FB421CBE3B300ABCAED /* RequestData.swift */; };
 		7B440FB721CBE47800ABCAED /* DefaultPathParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FB621CBE47800ABCAED /* DefaultPathParameters.swift */; };
 		7B440FB921CBE4B400ABCAED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FB821CBE4B400ABCAED /* APIClient.swift */; };
-		7B440FBB21CC4A1000ABCAED /* MarvelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FBA21CC4A1000ABCAED /* MarvelKeys.swift */; };
+		7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */; };
+		7B440FC121CC553F00ABCAED /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FC021CC553F00ABCAED /* APIRoutes.swift */; };
 		7B440FBD21CC4A7800ABCAED /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FBC21CC4A7800ABCAED /* ResponseHandler.swift */; };
 		7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461121CA9080004CEF4D /* Coordinator.swift */; };
 		7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */; };
@@ -65,7 +66,8 @@
 		7B440FB421CBE3B300ABCAED /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		7B440FB621CBE47800ABCAED /* DefaultPathParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPathParameters.swift; sourceTree = "<group>"; };
 		7B440FB821CBE4B400ABCAED /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		7B440FBA21CC4A1000ABCAED /* MarvelKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelKeys.swift; sourceTree = "<group>"; };
+		7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentSettings.swift; sourceTree = "<group>"; };
+		7B440FC021CC553F00ABCAED /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		7B440FBC21CC4A7800ABCAED /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		7B4A461121CA9080004CEF4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Coordinator.swift"; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 				7B440FB421CBE3B300ABCAED /* RequestData.swift */,
 				7B440FB621CBE47800ABCAED /* DefaultPathParameters.swift */,
 				7B440FB821CBE4B400ABCAED /* APIClient.swift */,
-				7B440FBA21CC4A1000ABCAED /* MarvelKeys.swift */,
+				7B440FC021CC553F00ABCAED /* APIRoutes.swift */,
 				7B440FBC21CC4A7800ABCAED /* ResponseHandler.swift */,
 			);
 			path = API;
@@ -128,6 +130,7 @@
 			children = (
 				7B440F9921CAA84400ABCAED /* Result.swift */,
 				7B440FA621CABB2400ABCAED /* DataModelResponse.swift */,
+				7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -394,9 +397,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B440FBB21CC4A1000ABCAED /* MarvelKeys.swift in Sources */,
+				7B440FC121CC553F00ABCAED /* APIRoutes.swift in Sources */,
 				7B440FB721CBE47800ABCAED /* DefaultPathParameters.swift in Sources */,
 				7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */,
+				7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */,
 				7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */,
 				7B440F9A21CAA84400ABCAED /* Result.swift in Sources */,
 				7B440FA721CABB2400ABCAED /* DataModelResponse.swift in Sources */,
@@ -464,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "https://gateway.marvel.com:443/v1/public/";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -525,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "https://gateway.marvel.com:443/v1/public/";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

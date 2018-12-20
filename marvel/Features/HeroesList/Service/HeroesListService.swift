@@ -24,7 +24,10 @@ public class HeroesListService: HeroesListServiceProtocol {
     public func heroes(_ request: HeroesListRequest,
                        _ callback: @escaping (Result<HeroesResponse>) -> Void) {
         
-        let req = RequestData(path: "https://gateway.marvel.com:443/v1/public/characters?limit=20&offset=19",
+        let path = APIRoutes.characterList(limit: request.limit,
+                                           offset: request.offset).path
+        
+        let req = RequestData(path: path,
                               method: .get)
         
         self.api.heroes(req, callback)
