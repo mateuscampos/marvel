@@ -23,6 +23,7 @@
 		7B440FB721CBE47800ABCAED /* DefaultPathParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FB621CBE47800ABCAED /* DefaultPathParameters.swift */; };
 		7B440FB921CBE4B400ABCAED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FB821CBE4B400ABCAED /* APIClient.swift */; };
 		7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */; };
+		7B440FC121CC553F00ABCAED /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B440FC021CC553F00ABCAED /* APIRoutes.swift */; };
 		7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461121CA9080004CEF4D /* Coordinator.swift */; };
 		7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */; };
 		7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5F122A21CA82EC0095573D /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		7B440FB621CBE47800ABCAED /* DefaultPathParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPathParameters.swift; sourceTree = "<group>"; };
 		7B440FB821CBE4B400ABCAED /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentSettings.swift; sourceTree = "<group>"; };
+		7B440FC021CC553F00ABCAED /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		7B4A461121CA9080004CEF4D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7B4A461421CA9109004CEF4D /* Array+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Coordinator.swift"; sourceTree = "<group>"; };
 		7B5F122721CA82EC0095573D /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				7B440FB421CBE3B300ABCAED /* RequestData.swift */,
 				7B440FB621CBE47800ABCAED /* DefaultPathParameters.swift */,
 				7B440FB821CBE4B400ABCAED /* APIClient.swift */,
+				7B440FC021CC553F00ABCAED /* APIRoutes.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B440FC121CC553F00ABCAED /* APIRoutes.swift in Sources */,
 				7B440FB721CBE47800ABCAED /* DefaultPathParameters.swift in Sources */,
 				7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */,
 				7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */,

@@ -24,11 +24,10 @@ public class HeroesListService: HeroesListServiceProtocol {
     public func heroes(_ request: HeroesListRequest,
                        _ callback: @escaping (Result<HeroesResponse>) -> Void) {
         
-        guard let baseUrl = EnvironmentSettings.baseUrl else {
-            fatalError("Should have a base url set up on project configuration")
-        }
+        let path = APIRoutes.characterList(limit: request.limit,
+                                           offset: request.offset).path
         
-        let req = RequestData(path: "\(baseUrl)characters?limit=20&offset=19",
+        let req = RequestData(path: path,
                               method: .get)
         
         self.api.heroes(req, callback)
