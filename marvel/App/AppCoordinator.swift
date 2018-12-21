@@ -21,8 +21,9 @@ class AppCoordinator: Coordinator {
     
     func start() {
         
-        self.navigation.viewControllers = [mockFakeViewController()]
-        printHeroes()
+        let coordinator = HeroesListCoordinator(rootViewController: self.navigation)
+        coordinator.start()
+        self.childCoordinators.append(coordinator)
         
     }
     

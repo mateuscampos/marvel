@@ -33,6 +33,8 @@
 		7B50A33C21CC756C0023E779 /* HeroesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A33B21CC756C0023E779 /* HeroesListView.swift */; };
 		7B50A33E21CC76400023E779 /* ViewCodingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A33D21CC76400023E779 /* ViewCodingProtocol.swift */; };
 		7B50A34021CD9F300023E779 /* UIView+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A33F21CD9F2F0023E779 /* UIView+NSLayoutConstraint.swift */; };
+		7B50A34321CDA2690023E779 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34221CDA2690023E779 /* HeroesListViewController.swift */; };
+		7B50A34521CDA3E40023E779 /* HeroesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34421CDA3E40023E779 /* HeroesListCoordinator.swift */; };
 		7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5F122A21CA82EC0095573D /* AppDelegate.swift */; };
 		7B5F123221CA82ED0095573D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5F123121CA82ED0095573D /* Assets.xcassets */; };
 		7B5F123521CA82ED0095573D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5F123321CA82ED0095573D /* LaunchScreen.storyboard */; };
@@ -85,6 +87,8 @@
 		7B50A33B21CC756C0023E779 /* HeroesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListView.swift; sourceTree = "<group>"; };
 		7B50A33D21CC76400023E779 /* ViewCodingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodingProtocol.swift; sourceTree = "<group>"; };
 		7B50A33F21CD9F2F0023E779 /* UIView+NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
+		7B50A34221CDA2690023E779 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
+		7B50A34421CDA3E40023E779 /* HeroesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListCoordinator.swift; sourceTree = "<group>"; };
 		7B5F122721CA82EC0095573D /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5F122A21CA82EC0095573D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B5F123121CA82ED0095573D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		7B440F9F21CAB4E200ABCAED /* HeroesList */ = {
 			isa = PBXGroup;
 			children = (
+				7B50A34121CDA1B40023E779 /* Controllers */,
 				7B50A33A21CC75340023E779 /* Views */,
 				7B440FA321CAB54900ABCAED /* Models */,
 				7B440FA021CAB4EF00ABCAED /* Service */,
@@ -173,6 +178,7 @@
 			children = (
 				7B440FA421CAB79300ABCAED /* HeroesResponse.swift */,
 				7B440FAA21CABCBA00ABCAED /* HeroesListRequest.swift */,
+				7B50A34421CDA3E40023E779 /* HeroesListCoordinator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +255,14 @@
 				7B50A33B21CC756C0023E779 /* HeroesListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7B50A34121CDA1B40023E779 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B50A34221CDA2690023E779 /* HeroesListViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7B5F121E21CA82EC0095573D = {
@@ -478,9 +492,11 @@
 				7B440F9721CAA2C300ABCAED /* MarvelApiClient.swift in Sources */,
 				7B440FB521CBE3B300ABCAED /* RequestData.swift in Sources */,
 				7B440FBD21CC4A7800ABCAED /* ResponseHandler.swift in Sources */,
+				7B50A34521CDA3E40023E779 /* HeroesListCoordinator.swift in Sources */,
 				7B440FA521CAB79300ABCAED /* HeroesResponse.swift in Sources */,
 				7B440FA221CAB51100ABCAED /* HeroesListAPI.swift in Sources */,
 				7B50A33421CC729C0023E779 /* TableViewDataSource.swift in Sources */,
+				7B50A34321CDA2690023E779 /* HeroesListViewController.swift in Sources */,
 				7B440FA921CABBF400ABCAED /* HeroesListService.swift in Sources */,
 				7B440FAF21CACFDC00ABCAED /* MarvelKeysProtocol.swift in Sources */,
 				7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */,
