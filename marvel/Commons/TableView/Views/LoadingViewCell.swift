@@ -1,5 +1,5 @@
 //
-//  LoadingView.swift
+//  LoadingViewCell.swift
 //  marvel
 //
 //  Created by Mateus Campos on 22/12/18.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class LoadingView: UIView {
-    
-    private var parentView: UIView?
+public class LoadingViewCell: UIView {
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .gray)
@@ -19,31 +17,21 @@ class LoadingView: UIView {
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
+        setupViewConfiguration()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Use view coding to initialize view")
     }
-
-}
-
-extension LoadingView {
-    
-    func showIn(view: UIView) {
-        parentView = view
-        view.addSubview(self)
-        setupViewConfiguration()
-    }
-    
-    func remove() {
-        
-        self.removeFromSuperview()
-        
-    }
     
 }
 
-extension LoadingView: ViewCodingProtocol {
+extension LoadingViewCell: Reusable {
+    
+}
+
+
+extension LoadingViewCell: ViewCodingProtocol {
     
     func configureViews() {
         self.backgroundColor = .white
@@ -56,26 +44,27 @@ extension LoadingView: ViewCodingProtocol {
     
     func setupConstraints() {
         
-        self.constraint { view in
-            
-            guard let superview = view.superview else {
-                fatalError("should have a superview")
-            }
-            
-            return [view.topAnchor.constraint(equalTo: superview.topAnchor),
-                    view.leftAnchor.constraint(equalTo: superview.leftAnchor),
-                    view.rightAnchor.constraint(equalTo: superview.rightAnchor),
-                    view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)]
-            
-        }
-        
         activityIndicator.constraint { view in
-
+            
             return [view.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                     view.centerYAnchor.constraint(equalTo: self.centerYAnchor)]
             
         }
         
+    }
+    
+}
+
+public extension LoadingViewCell {
+    
+    public func setup(with data: Configuration) {
+        
+        activityIndicator.tintColor = data.color
+        
+    }
+    
+    public struct Configuration {
+        var color: UIColor
     }
     
 }

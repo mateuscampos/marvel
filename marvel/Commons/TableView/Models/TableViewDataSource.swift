@@ -10,6 +10,10 @@ import UIKit
 
 public class TableViewDataSource: NSObject {
     
+    var loadMore: (() -> Void)?
+    
+    private let threshold: CGFloat = 400.0
+    
     private var sections: [TableViewSection] = []
     
     public init(sections: [TableViewSection], tableView: UITableView) {
@@ -36,7 +40,7 @@ public class TableViewDataSource: NSObject {
     public func insertSection(section: TableViewSection) {
         self.sections.append(section)
     }
-    
+     
 }
 
 extension TableViewDataSource: UITableViewDataSource {
@@ -118,3 +122,19 @@ extension TableViewDataSource: UITableViewDelegate {
     
 }
 
+extension TableViewDataSource: UIScrollViewDelegate {
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let contentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+        
+        if (maximumOffset - contentOffset <= threshold) {
+            
+            self.loadMore?()
+            
+        }
+        
+    }
+
+}
