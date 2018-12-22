@@ -39,5 +39,15 @@ public struct Hero: Codable {
 public struct Thumbnail: Codable {
     
     public var path: String
+    public var fileeExtension: String
+    
+    public enum CodingKeys: String, CodingKey {
+        case path
+        case fileeExtension = "extension"
+    }
+    
+    public func fullPath() -> String {
+        return path + "." + fileeExtension
+    }
     
 }
