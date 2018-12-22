@@ -35,6 +35,11 @@
 		7B50A34021CD9F300023E779 /* UIView+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A33F21CD9F2F0023E779 /* UIView+NSLayoutConstraint.swift */; };
 		7B50A34321CDA2690023E779 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34221CDA2690023E779 /* HeroesListViewController.swift */; };
 		7B50A34521CDA3E40023E779 /* HeroesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34421CDA3E40023E779 /* HeroesListCoordinator.swift */; };
+		7B50A34821CDAADF0023E779 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34721CDAADF0023E779 /* ProfileViewCell.swift */; };
+		7B50A34A21CDAED70023E779 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34921CDAED70023E779 /* Reusable.swift */; };
+		7B50A34D21CDB4AF0023E779 /* ContainerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34C21CDB4AF0023E779 /* ContainerCellBuilder.swift */; };
+		7B50A34F21CDB4E70023E779 /* ContentCellConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A34E21CDB4E70023E779 /* ContentCellConvertible.swift */; };
+		7B50A35121CDB5460023E779 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50A35021CDB5460023E779 /* ContainerTableViewCell.swift */; };
 		7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5F122A21CA82EC0095573D /* AppDelegate.swift */; };
 		7B5F123221CA82ED0095573D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5F123121CA82ED0095573D /* Assets.xcassets */; };
 		7B5F123521CA82ED0095573D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5F123321CA82ED0095573D /* LaunchScreen.storyboard */; };
@@ -89,6 +94,11 @@
 		7B50A33F21CD9F2F0023E779 /* UIView+NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
 		7B50A34221CDA2690023E779 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		7B50A34421CDA3E40023E779 /* HeroesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListCoordinator.swift; sourceTree = "<group>"; };
+		7B50A34721CDAADF0023E779 /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
+		7B50A34921CDAED70023E779 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		7B50A34C21CDB4AF0023E779 /* ContainerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCellBuilder.swift; sourceTree = "<group>"; };
+		7B50A34E21CDB4E70023E779 /* ContentCellConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCellConvertible.swift; sourceTree = "<group>"; };
+		7B50A35021CDB5460023E779 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 		7B5F122721CA82EC0095573D /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5F122A21CA82EC0095573D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B5F123121CA82ED0095573D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +159,7 @@
 				7B440F9921CAA84400ABCAED /* Result.swift */,
 				7B440FA621CABB2400ABCAED /* DataModelResponse.swift */,
 				7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */,
+				7B50A34921CDAED70023E779 /* Reusable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +228,8 @@
 		7B50A32C21CC61410023E779 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				7B50A34B21CDB4550023E779 /* CellBuilder */,
+				7B50A34621CDAAB10023E779 /* Views */,
 				7B50A33521CC731D0023E779 /* TableViewSection */,
 				7B50A33221CC728D0023E779 /* Models */,
 				7B50A32D21CC620E0023E779 /* Protocols */,
@@ -229,6 +242,7 @@
 			children = (
 				7B50A32E21CC62D90023E779 /* TableViewCellBuilder.swift */,
 				7B50A33021CC682A0023E779 /* TableViewSection.swift */,
+				7B50A34E21CDB4E70023E779 /* ContentCellConvertible.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -263,6 +277,23 @@
 				7B50A34221CDA2690023E779 /* HeroesListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7B50A34621CDAAB10023E779 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B50A34721CDAADF0023E779 /* ProfileViewCell.swift */,
+				7B50A35021CDB5460023E779 /* ContainerTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B50A34B21CDB4550023E779 /* CellBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				7B50A34C21CDB4AF0023E779 /* ContainerCellBuilder.swift */,
+			);
+			path = CellBuilder;
 			sourceTree = "<group>";
 		};
 		7B5F121E21CA82EC0095573D = {
@@ -477,9 +508,11 @@
 				7B440FB721CBE47800ABCAED /* DefaultPathParameters.swift in Sources */,
 				7B50A33E21CC76400023E779 /* ViewCodingProtocol.swift in Sources */,
 				7B50A33821CC73520023E779 /* StaticSection.swift in Sources */,
+				7B50A35121CDB5460023E779 /* ContainerTableViewCell.swift in Sources */,
 				7B50A33121CC682A0023E779 /* TableViewSection.swift in Sources */,
 				7B50A34021CD9F300023E779 /* UIView+NSLayoutConstraint.swift in Sources */,
 				7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */,
+				7B50A34D21CDB4AF0023E779 /* ContainerCellBuilder.swift in Sources */,
 				7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */,
 				7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */,
 				7B440F9A21CAA84400ABCAED /* Result.swift in Sources */,
@@ -490,7 +523,9 @@
 				7B440FB321CAD80400ABCAED /* String+Crypto.swift in Sources */,
 				7B440F9E21CAB06100ABCAED /* Parser.swift in Sources */,
 				7B440F9721CAA2C300ABCAED /* MarvelApiClient.swift in Sources */,
+				7B50A34821CDAADF0023E779 /* ProfileViewCell.swift in Sources */,
 				7B440FB521CBE3B300ABCAED /* RequestData.swift in Sources */,
+				7B50A34F21CDB4E70023E779 /* ContentCellConvertible.swift in Sources */,
 				7B440FBD21CC4A7800ABCAED /* ResponseHandler.swift in Sources */,
 				7B50A34521CDA3E40023E779 /* HeroesListCoordinator.swift in Sources */,
 				7B440FA521CAB79300ABCAED /* HeroesResponse.swift in Sources */,
@@ -499,6 +534,7 @@
 				7B50A34321CDA2690023E779 /* HeroesListViewController.swift in Sources */,
 				7B440FA921CABBF400ABCAED /* HeroesListService.swift in Sources */,
 				7B440FAF21CACFDC00ABCAED /* MarvelKeysProtocol.swift in Sources */,
+				7B50A34A21CDAED70023E779 /* Reusable.swift in Sources */,
 				7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */,
 				7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */,
 				7B50A32F21CC62D90023E779 /* TableViewCellBuilder.swift in Sources */,
