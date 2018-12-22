@@ -8,12 +8,14 @@
 
 import UIKit
 
-public class ProfileViewCell: UITableViewCell {
+public class ProfileViewCell: UIView {
     
     lazy var profileImage: UIImageView = {
         let img = UIImageView()
-        img.layer.cornerRadius = 3
+        img.layer.cornerRadius = 25
         img.layer.masksToBounds = true
+        img.clipsToBounds = true
+        img.backgroundColor = .lightGray
         return img
     }()
     
@@ -29,17 +31,15 @@ public class ProfileViewCell: UITableViewCell {
         return label
     }()
     
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    lazy var infoContainerView: UIView = UIView()
+    
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
         setupViewConfiguration()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Use view coding to initialize view")
-    }
-    
-    public override func prepareForReuse() {
-        super.prepareForReuse()
     }
     
 }
@@ -51,24 +51,46 @@ extension ProfileViewCell: Reusable {
 extension ProfileViewCell: ViewCodingProtocol {
     
     func buildViewHierarchy() {
-        self.contentView.addSubview(profileImage)
-        self.contentView.addSubview(nameLabel)
-        self.contentView.addSubview(lastModificationDateLabel)
+        self.addSubview(profileImage)
+        self.addSubview(infoContainerView)
+        self.infoContainerView.addSubview(nameLabel)
+        self.infoContainerView.addSubview(lastModificationDateLabel)
     }
     
     func setupConstraints() {
         
+        self.profileImage.constraint { view in
+            [view.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+             view.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+             view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+             view.rightAnchor.constraint(equalTo: infoContainerView.leftAnchor, constant: -32),
+             view.heightAnchor.constraint(equalToConstant: 100),
+             view.widthAnchor.constraint(equalToConstant: 100)]
+        }
+        
+        self.infoContainerView.constraint { view in
+            [view.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -32),
+             view.centerYAnchor.constraint(equalTo: self.centerYAnchor)]
+        }
+        
+        self.nameLabel.constraint { view in
+            [view.topAnchor.constraint(equalTo: infoContainerView.topAnchor),
+             view.leftAnchor.constraint(equalTo: infoContainerView.leftAnchor),
+             view.rightAnchor.constraint(equalTo: infoContainerView.rightAnchor),
+             view.bottomAnchor.constraint(equalTo: lastModificationDateLabel.topAnchor, constant: -16)]
+        }
+        
+        self.lastModificationDateLabel.constraint { view in
+            [view.bottomAnchor.constraint(equalTo: infoContainerView.bottomAnchor),
+             view.leftAnchor.constraint(equalTo: infoContainerView.leftAnchor),
+             view.rightAnchor.constraint(equalTo: infoContainerView.rightAnchor)]
+        }
         
     }
     
     func configureViews() {
         
         self.backgroundColor = .white
-        self.selectionStyle = .none
-        self.separatorInset = UIEdgeInsets(top: 0,
-                                           left: self.bounds.width,
-                                           bottom: 0,
-                                           right: 0)
         
     }
     
@@ -76,7 +98,7 @@ extension ProfileViewCell: ViewCodingProtocol {
 
 public extension ProfileViewCell {
     
-    public func configure(with data: Configuration) {
+    public func setup(with data: Configuration) {
         
         nameLabel.text = data.name
         
@@ -85,7 +107,7 @@ public extension ProfileViewCell {
         }
         
         if let profilePath = data.profilePicturePath {
-            profileImage.image = loadImageFrom(path: profilePath)
+            profileImage.dowloadFromServer(link: profilePath)
         }
         
     }
@@ -94,14 +116,6 @@ public extension ProfileViewCell {
         var name: String
         var lastModificationDate: String?
         var profilePicturePath: String?
-    }
-    
-}
-
-public extension ProfileViewCell {
-    
-    func loadImageFrom(path: String) -> UIImage {
-        return UIImage()
     }
     
 }
