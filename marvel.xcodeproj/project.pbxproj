@@ -49,6 +49,8 @@
 		7BC019BC21CE841500A3BC00 /* MarvelKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019BB21CE841500A3BC00 /* MarvelKeys.swift */; };
 		7BC019BE21CE8AD000A3BC00 /* UIImageView+ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019BD21CE8AD000A3BC00 /* UIImageView+ImageDownloader.swift */; };
 		7BC019C021CEB98900A3BC00 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019BF21CEB98800A3BC00 /* LoadingView.swift */; };
+		7BC019C221CED35300A3BC00 /* LoadingViewCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019C121CED35300A3BC00 /* LoadingViewCellBuilder.swift */; };
+		7BC019C521CED51500A3BC00 /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019C421CED51500A3BC00 /* LoadingViewCell.swift */; };
 		7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC12B8C21CA8FFB00EBCC31 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		7BC019BB21CE841500A3BC00 /* MarvelKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelKeys.swift; sourceTree = "<group>"; };
 		7BC019BD21CE8AD000A3BC00 /* UIImageView+ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageDownloader.swift"; sourceTree = "<group>"; };
 		7BC019BF21CEB98800A3BC00 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7BC019C121CED35300A3BC00 /* LoadingViewCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCellBuilder.swift; sourceTree = "<group>"; };
+		7BC019C421CED51500A3BC00 /* LoadingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
 		7BC12B8C21CA8FFB00EBCC31 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,7 @@
 		7B4A460F21CA9040004CEF4D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				7BC019C321CED4A500A3BC00 /* Views */,
 				7B50A32C21CC61410023E779 /* TableView */,
 				7B440F9821CAA83800ABCAED /* Utils */,
 				7B4A461321CA90D4004CEF4D /* Extensions */,
@@ -294,7 +299,7 @@
 			children = (
 				7B50A34721CDAADF0023E779 /* ProfileViewCell.swift */,
 				7B50A35021CDB5460023E779 /* ContainerTableViewCell.swift */,
-				7BC019BF21CEB98800A3BC00 /* LoadingView.swift */,
+				7BC019C421CED51500A3BC00 /* LoadingViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			children = (
 				7B50A34C21CDB4AF0023E779 /* ContainerCellBuilder.swift */,
 				7B50A35221CE6D7A0023E779 /* ProfileViewCellBuilder.swift */,
+				7BC019C121CED35300A3BC00 /* LoadingViewCellBuilder.swift */,
 			);
 			path = CellBuilder;
 			sourceTree = "<group>";
@@ -356,6 +362,14 @@
 				7B5F124C21CA82ED0095573D /* Info.plist */,
 			);
 			path = marvelUITests;
+			sourceTree = "<group>";
+		};
+		7BC019C321CED4A500A3BC00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7BC019BF21CEB98800A3BC00 /* LoadingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7BC12B8921CA8FC100EBCC31 /* App */ = {
@@ -530,6 +544,7 @@
 				7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */,
 				7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */,
 				7B440F9A21CAA84400ABCAED /* Result.swift in Sources */,
+				7BC019C521CED51500A3BC00 /* LoadingViewCell.swift in Sources */,
 				7B440FA721CABB2400ABCAED /* DataModelResponse.swift in Sources */,
 				7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */,
 				7B440FB921CBE4B400ABCAED /* APIClient.swift in Sources */,
@@ -554,6 +569,7 @@
 				7B5F122B21CA82EC0095573D /* AppDelegate.swift in Sources */,
 				7B50A35321CE6D7A0023E779 /* ProfileViewCellBuilder.swift in Sources */,
 				7B50A32F21CC62D90023E779 /* TableViewCellBuilder.swift in Sources */,
+				7BC019C221CED35300A3BC00 /* LoadingViewCellBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
