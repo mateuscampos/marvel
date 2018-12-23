@@ -22,9 +22,29 @@ class HeroesListCoordinator: Coordinator {
     
     func start() {
         
-        let controller = HeroesListViewController()
+        let controller = HeroesListViewController(delegate: self)
         controller.title = "Heroes"
         self.navigation.viewControllers = [controller]
+        
+    }
+    
+    func showDetail(hero: Hero) {
+        
+        let controller = HeroDetailViewController(hero: hero)
+        controller.title = "Hero detail"
+        self.navigation.pushViewController(controller,
+                                           animated: true)
+        
+    }
+    
+}
+
+extension HeroesListCoordinator: HeroesListViewControllerDelegate {
+    
+    func heroesListViewControllerDidSelectedHero(_ viewController: HeroesListViewController,
+                                                 hero: Hero) {
+        
+        showDetail(hero: hero)
         
     }
     

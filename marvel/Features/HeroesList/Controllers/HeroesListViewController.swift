@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 
+protocol HeroesListViewControllerDelegate: class {
+
+    func heroesListViewControllerDidSelectedHero(_ viewController: HeroesListViewController,
+                                                 hero: Hero)
+
+}
+
 class HeroesListViewController: UIViewController {
     
     let loadingView = LoadingView()
@@ -18,8 +25,11 @@ class HeroesListViewController: UIViewController {
     let service: HeroesListServiceProtocol
     var heroesResponse: HeroesResponse?
     var isLoading: Bool = false
+    weak var delegate: HeroesListViewControllerDelegate?
     
-    init(service: HeroesListServiceProtocol = HeroesListService()) {
+    init(service: HeroesListServiceProtocol = HeroesListService(),
+         delegate: HeroesListViewControllerDelegate) {
+        self.delegate = delegate
         self.service = service
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,6 +39,7 @@ class HeroesListViewController: UIViewController {
     }
     
     override func loadView() {
+        super.loadView()
         self.view = heroesListView
         self.loadingView.showIn(view: self.view)
     }
@@ -51,8 +62,14 @@ extension HeroesListViewController {
         var sections: [TableViewSection] = []
         
         for hero in heroes {
-            let builder = ProfileViewCellBuilder(hero: hero)
+            
+            let callback: () -> Void = { [weak self] in
+                self?.didSelectHero(hero: hero)
+            }
+            
+            let builder = ProfileViewCellBuilder(hero: hero, onSelect: callback)
             heroBuilders.append(builder)
+            
         }
         
         let heroesSection = StaticSection(cellBuilders: heroBuilders)
@@ -79,6 +96,10 @@ extension HeroesListViewController {
         }
         
     }
+
+}
+
+extension HeroesListViewController {
     
     func fetchHeroes(limit: Int, offset: Int) {
         
@@ -86,7 +107,7 @@ extension HeroesListViewController {
         
         self.service.heroes(HeroesListRequest(limit: limit,
                                               offset: offset)) { response in
-            
+                                                
                                                 switch response {
                                                 case .success(let heroesResponse):
                                                     self.heroesResponse = heroesResponse
@@ -99,7 +120,7 @@ extension HeroesListViewController {
                                                     self.isLoading = false
                                                     print(error)
                                                 }
-            
+                                                
         }
         
     }
@@ -116,7 +137,18 @@ extension HeroesListViewController {
         if offset < response.total && !isLoading {
             fetchHeroes(limit: response.limit, offset: offset)
         }
+        
+    }
+    
+}
 
+extension HeroesListViewController {
+    
+    func didSelectHero(hero: Hero) {
+        
+        self.delegate?.heroesListViewControllerDidSelectedHero(self,
+                                                               hero: hero)
+        
     }
     
 }
