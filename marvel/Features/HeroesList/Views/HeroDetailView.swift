@@ -1,15 +1,15 @@
 //
-//  HeroesListView.swift
+//  HeroDetailView.swift
 //  marvel
 //
-//  Created by Mateus Campos on 20/12/18.
+//  Created by Mateus Campos on 22/12/18.
 //  Copyright © 2018 Mateus Campos. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-public class HeroesListView: UIView {
+public class HeroDetailView: UIView {
     
     let tableView = UITableView()
     
@@ -24,7 +24,7 @@ public class HeroesListView: UIView {
     
 }
 
-extension HeroesListView: ViewCodingProtocol {
+extension HeroDetailView: ViewCodingProtocol {
     
     func configureViews() {
         tableView.tableFooterView = UIView()
@@ -47,5 +47,5 @@ extension HeroesListView: ViewCodingProtocol {
         }
         
     }
-
+    
 }

@@ -51,6 +51,13 @@
 		7BC019C021CEB98900A3BC00 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019BF21CEB98800A3BC00 /* LoadingView.swift */; };
 		7BC019C221CED35300A3BC00 /* LoadingViewCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019C121CED35300A3BC00 /* LoadingViewCellBuilder.swift */; };
 		7BC019C521CED51500A3BC00 /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019C421CED51500A3BC00 /* LoadingViewCell.swift */; };
+		7BC019C721CEF13600A3BC00 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019C621CEF13600A3BC00 /* HeroDetailViewController.swift */; };
+		7BC019C921CEF1EA00A3BC00 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019C821CEF1EA00A3BC00 /* HeroDetailView.swift */; };
+		7BC019CB21CEF56A00A3BC00 /* SingleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019CA21CEF56A00A3BC00 /* SingleTextCell.swift */; };
+		7BC019CD21CEF74800A3BC00 /* SingleTextCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019CC21CEF74800A3BC00 /* SingleTextCellBuilder.swift */; };
+		7BC019CF21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019CE21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift */; };
+		7BC019D121CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019D021CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift */; };
+		7BC019D321CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019D221CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift */; };
 		7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC12B8C21CA8FFB00EBCC31 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +129,13 @@
 		7BC019BF21CEB98800A3BC00 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		7BC019C121CED35300A3BC00 /* LoadingViewCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCellBuilder.swift; sourceTree = "<group>"; };
 		7BC019C421CED51500A3BC00 /* LoadingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
+		7BC019C621CEF13600A3BC00 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		7BC019C821CEF1EA00A3BC00 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
+		7BC019CA21CEF56A00A3BC00 /* SingleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextCell.swift; sourceTree = "<group>"; };
+		7BC019CC21CEF74800A3BC00 /* SingleTextCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextCellBuilder.swift; sourceTree = "<group>"; };
+		7BC019CE21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImagePresentationCell.swift; sourceTree = "<group>"; };
+		7BC019D021CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImagePresentationCellBuilder.swift; sourceTree = "<group>"; };
+		7BC019D221CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitespaceTableViewCellBuilder.swift; sourceTree = "<group>"; };
 		7BC12B8C21CA8FFB00EBCC31 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				7B50A33B21CC756C0023E779 /* HeroesListView.swift */,
+				7BC019C821CEF1EA00A3BC00 /* HeroDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				7B50A34221CDA2690023E779 /* HeroesListViewController.swift */,
+				7BC019C621CEF13600A3BC00 /* HeroDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +316,8 @@
 				7B50A34721CDAADF0023E779 /* ProfileViewCell.swift */,
 				7B50A35021CDB5460023E779 /* ContainerTableViewCell.swift */,
 				7BC019C421CED51500A3BC00 /* LoadingViewCell.swift */,
+				7BC019CA21CEF56A00A3BC00 /* SingleTextCell.swift */,
+				7BC019CE21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +328,9 @@
 				7B50A34C21CDB4AF0023E779 /* ContainerCellBuilder.swift */,
 				7B50A35221CE6D7A0023E779 /* ProfileViewCellBuilder.swift */,
 				7BC019C121CED35300A3BC00 /* LoadingViewCellBuilder.swift */,
+				7BC019CC21CEF74800A3BC00 /* SingleTextCellBuilder.swift */,
+				7BC019D021CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift */,
+				7BC019D221CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift */,
 			);
 			path = CellBuilder;
 			sourceTree = "<group>";
@@ -534,18 +555,24 @@
 				7B440FB721CBE47800ABCAED /* DefaultPathParameters.swift in Sources */,
 				7BC019BE21CE8AD000A3BC00 /* UIImageView+ImageDownloader.swift in Sources */,
 				7B50A33E21CC76400023E779 /* ViewCodingProtocol.swift in Sources */,
+				7BC019D121CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift in Sources */,
 				7B50A33821CC73520023E779 /* StaticSection.swift in Sources */,
 				7B50A35121CDB5460023E779 /* ContainerTableViewCell.swift in Sources */,
 				7B50A33121CC682A0023E779 /* TableViewSection.swift in Sources */,
 				7B50A34021CD9F300023E779 /* UIView+NSLayoutConstraint.swift in Sources */,
+				7BC019C721CEF13600A3BC00 /* HeroDetailViewController.swift in Sources */,
 				7B440F9C21CAAEEE00ABCAED /* APIResponse.swift in Sources */,
 				7B50A34D21CDB4AF0023E779 /* ContainerCellBuilder.swift in Sources */,
 				7BC019C021CEB98900A3BC00 /* LoadingView.swift in Sources */,
+				7BC019CF21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift in Sources */,
 				7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */,
+				7BC019CB21CEF56A00A3BC00 /* SingleTextCell.swift in Sources */,
+				7BC019CD21CEF74800A3BC00 /* SingleTextCellBuilder.swift in Sources */,
 				7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */,
 				7B440F9A21CAA84400ABCAED /* Result.swift in Sources */,
 				7BC019C521CED51500A3BC00 /* LoadingViewCell.swift in Sources */,
 				7B440FA721CABB2400ABCAED /* DataModelResponse.swift in Sources */,
+				7BC019D321CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift in Sources */,
 				7B4A461521CA9109004CEF4D /* Array+Coordinator.swift in Sources */,
 				7B440FB921CBE4B400ABCAED /* APIClient.swift in Sources */,
 				7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */,
@@ -561,6 +588,7 @@
 				7B440FA521CAB79300ABCAED /* HeroesResponse.swift in Sources */,
 				7B440FA221CAB51100ABCAED /* HeroesListAPI.swift in Sources */,
 				7B50A33421CC729C0023E779 /* TableViewDataSource.swift in Sources */,
+				7BC019C921CEF1EA00A3BC00 /* HeroDetailView.swift in Sources */,
 				7B50A34321CDA2690023E779 /* HeroesListViewController.swift in Sources */,
 				7B440FA921CABBF400ABCAED /* HeroesListService.swift in Sources */,
 				7B440FAF21CACFDC00ABCAED /* MarvelKeysProtocol.swift in Sources */,

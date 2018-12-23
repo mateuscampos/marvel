@@ -20,11 +20,12 @@ public typealias ProfileViewCellBuilder = ContainerCellBuilder<ProfileViewCell>
 
 extension ContainerCellBuilder where T == ProfileViewCell {
     
-    convenience init(hero: Hero) {
+    convenience init(hero: Hero, onSelect: (() -> Void)? = nil) {
         
         self.init(Configuration(name: hero.name,
                                 lastModificationDate: hero.modified,
-                                profilePicturePath: hero.thumbnail.fullPath()))
+                                profilePicturePath: hero.thumbnail.fullPath()),
+                  onSelect: onSelect)
         
     }
     
