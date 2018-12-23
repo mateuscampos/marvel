@@ -58,6 +58,8 @@
 		7BC019CF21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019CE21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift */; };
 		7BC019D121CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019D021CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift */; };
 		7BC019D321CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019D221CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift */; };
+		7BC019D521CF0F7500A3BC00 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019D421CF0F7500A3BC00 /* String+Date.swift */; };
+		7BC019D721CF0FB500A3BC00 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC019D621CF0FB500A3BC00 /* DateFormatters.swift */; };
 		7BC12B8D21CA8FFB00EBCC31 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC12B8C21CA8FFB00EBCC31 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,8 @@
 		7BC019CE21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImagePresentationCell.swift; sourceTree = "<group>"; };
 		7BC019D021CEFC9600A3BC00 /* SingleImagePresentationCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImagePresentationCellBuilder.swift; sourceTree = "<group>"; };
 		7BC019D221CF08A400A3BC00 /* WhitespaceTableViewCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitespaceTableViewCellBuilder.swift; sourceTree = "<group>"; };
+		7BC019D421CF0F7500A3BC00 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		7BC019D621CF0FB500A3BC00 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		7BC12B8C21CA8FFB00EBCC31 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,7 @@
 				7B440FA621CABB2400ABCAED /* DataModelResponse.swift */,
 				7B440FBE21CC526F00ABCAED /* EnvironmentSettings.swift */,
 				7B50A34921CDAED70023E779 /* Reusable.swift */,
+				7BC019D621CF0FB500A3BC00 /* DateFormatters.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				7B440FB221CAD80400ABCAED /* String+Crypto.swift */,
 				7B50A33F21CD9F2F0023E779 /* UIView+NSLayoutConstraint.swift */,
 				7BC019BD21CE8AD000A3BC00 /* UIImageView+ImageDownloader.swift */,
+				7BC019D421CF0F7500A3BC00 /* String+Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				7BC019C021CEB98900A3BC00 /* LoadingView.swift in Sources */,
 				7BC019CF21CEFAAD00A3BC00 /* SingleImagePresentationCell.swift in Sources */,
 				7B440FBF21CC526F00ABCAED /* EnvironmentSettings.swift in Sources */,
+				7BC019D721CF0FB500A3BC00 /* DateFormatters.swift in Sources */,
 				7BC019CB21CEF56A00A3BC00 /* SingleTextCell.swift in Sources */,
 				7BC019CD21CEF74800A3BC00 /* SingleTextCellBuilder.swift in Sources */,
 				7B440FAB21CABCBA00ABCAED /* HeroesListRequest.swift in Sources */,
@@ -578,6 +585,7 @@
 				7B4A461221CA9080004CEF4D /* Coordinator.swift in Sources */,
 				7B440FB321CAD80400ABCAED /* String+Crypto.swift in Sources */,
 				7BC019BC21CE841500A3BC00 /* MarvelKeys.swift in Sources */,
+				7BC019D521CF0F7500A3BC00 /* String+Date.swift in Sources */,
 				7B440F9E21CAB06100ABCAED /* Parser.swift in Sources */,
 				7B440F9721CAA2C300ABCAED /* MarvelApiClient.swift in Sources */,
 				7B50A34821CDAADF0023E779 /* ProfileViewCell.swift in Sources */,
