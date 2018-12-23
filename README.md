@@ -28,3 +28,7 @@ This will make dure you have permission to access Marvel's API, and you have to 
 ```
 - Ability to fav/unfav Hero
 - Ability to search Hero
+- Unit and UI Test coverage
+- Setup Swiftlint
+- Setup Fastlane
+```
