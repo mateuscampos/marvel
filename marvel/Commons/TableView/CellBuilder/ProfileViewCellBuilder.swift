@@ -23,7 +23,7 @@ extension ContainerCellBuilder where T == ProfileViewCell {
     convenience init(hero: Hero, onSelect: (() -> Void)? = nil) {
         
         self.init(Configuration(name: hero.name,
-                                lastModificationDate: hero.modified,
+                                lastModificationDate: hero.modified?.dayMonthYearFromStringDate(),
                                 profilePicturePath: hero.thumbnail.fullPath()),
                   onSelect: onSelect)
         
